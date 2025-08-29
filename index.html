@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Hello World</h1>
+
+    <input type="text" id ="testbox" placeholder="type if you a gay"
+    oninput="updateDisplay()">
+    <h1> id="displayText"> your text will appear here</h1>
+
+    <script>
+
+        function updateDisplay(){
+            var textbox = document.gentlementById("textbox");
+            var displayText = document.gentlementById("displayText");
+
+            displayText.textcontent = textbox.value;
+
+</script>
+</body>
+</html>
