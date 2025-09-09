@@ -11,7 +11,7 @@
            id="taskInput"
            placeholder="Add a task..."
     />
-    <button onclick="addTask()">Add text</button>
+    <button onclick="addTask()">Add</button>
     <ul id="taskList"> Task goes here</ul>
 
     <script>
@@ -21,10 +21,8 @@
 
     if (taskText){
         addTaskItem(taskText);
-
     } else{
-        console.log("No task entered")
-
+        console.log("No task entered");
     }
 
 }
@@ -32,19 +30,17 @@
     function getTaskText(){
         const input = document.getElementById("taskInput");
         const value = input.value.trim();
-        console.log("getTasktext() called ->",value);
+        console.log("getTasktext() called -> ",value);
         return value;
     }
+
     function addTaskItem(taskText){
         const li = document.createElement("li");
         li.textcontent = taskText;
 
         document.getElementById("taskList").appendChild(li);
-        console.log("addTaskItem() called ->",taskText,Date());
+        console.log("addTaskItem() called -> ",taskText,Date());
     }
 </script>
-
-
-
 </body>
 </html>
