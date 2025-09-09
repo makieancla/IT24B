@@ -3,66 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do list</title>
+    <title>To Do List</title>
 </head>
 <body>
-    <h1>To do list</h1>
+    <h1>To Do List</h1>
     <input type="text"
            id="taskInput"
-           placeholder="Add a task..."
+           placeholder="Add a task"
     />
     <button onclick="addTask()">Add</button>
     
-    <ul id="taskList"> Task goes here...</ul>
+    <ul id="taskList">Your tasks goes here ...</ul>
 
 <script>
 
-    function addTask(){
+     function addTask(){
         const taskText = getTaskText();
 
-        if (taskText){
+        if(taskText){
             addTaskItem(taskText);
         } else {
             console.log("No task entered");
         }
     }
 
-    function getTaskText(){
-        const input = document.getElementById("taskInput");
-        const value = input.value.trim();
+     function getTaskText(){
+        const input = document.getElementById('taskInput');
+        const text = input.value.trim();
 
-        console.log("getTasktext() called -> " + value.value);
+        console.log("getTaskText() called: " + input.value);
         return text;
     }
 
-    function addTaskItem(taskText){
+     function addTaskItem(taskText){
         const li = document.createElement("li");
-        li.textcontent = taskText;
+        li.textContent = taskText;
 
         document.getElementById("taskList").appendChild(li);
-        console.log("addTaskItem() called -> ", taskText, Date());
+        console.log("addTaskItem() called ->: ", taskText, Date());
 
         const deleteBtn = createDeleteButton(li);
         li.appendChild(deleteBtn);
     }
 
-    function createDeleteButton(li){
-        const deleteBtn = documents.createElement("button");
+     function createDeleteButton(li){
+        const deleteBtn = document.createElement("button");
 
-        deleteBtn.textcontent="X";
-        deleteBtn.classname="delete-btn";
-        deleteBtn.style.marginleft="8px";
+        deleteBtn.textContent="X";
+        deleteBtn.className="delete-btn";
+        deleteBtn.style.marginLeft = "8px";
         deleteBtn.onclick = () => handleDeleteClick(li);
 
         console.log("createDeleteButton() called ->", li.textContent);
         return deleteBtn;
-
     }
 
-    function handleDeleteClick(li){
+     function handleDeleteClick(li){
         li.remove();
-         console.log("handleDeleteClick() called ->", li.textContent.replace("X","").trim(),Date());
+        console.log("handleDeleteClick() called ->", li.textContent.replace("X","").trim(),Date());
     }
+
 </script>
+    
 </body>
 </html>
